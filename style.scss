@@ -1,0 +1,193 @@
+// lear
+// Newsletter Sign-Up Form
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+// Colors
+$tomato: hsl(4, 100%, 67%);
+$darkSlateGrey: hsl(234, 29%, 20%);
+$charcoalGrey: hsl(235, 18%, 26%);
+$grey: hsl(231, 7%, 60%);
+$white: hsl(0, 0%, 100%);
+$gradientColor: to right, hsl(341, 100%, 64%), hsl(27, 100%, 60%);
+
+// Body
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: $charcoalGrey;
+}
+
+// Button
+.btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.35rem;
+  -webkit-border-radius: 0.35rem;
+  -moz-border-radius: 0.35rem;
+  -ms-border-radius: 0.35rem;
+  -o-border-radius: 0.35rem;
+  border: none;
+  color: $white;
+  background-color: $darkSlateGrey;
+  cursor: pointer;
+  font-size: 0.825rem;
+  font-weight: 400;
+
+  &:hover {
+    background-image: linear-gradient($gradientColor);
+    box-shadow: 0 0.25rem 0.5rem hsla(341, 100%, 64%, 0.5),
+      0 0.25rem 0.5rem hsla(27, 100%, 60%, 0.5);
+  }
+}
+
+// Main Content
+.main {
+  display: flex;
+  width: min(820px, 100vw);
+  background-color: $white;
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
+
+  .content {
+    width: 100%;
+    padding: 2.5rem 2rem;
+
+    .title {
+      font-size: 2.5rem;
+      color: $darkSlateGrey;
+      font-weight: 700;
+    }
+
+    .text {
+      font-size: 0.925rem;
+      line-height: 1.325rem;
+      padding: 1.45rem 0;
+      color: $charcoalGrey;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      list-style: none;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.925rem;
+        color: $charcoalGrey;
+      }
+    }
+
+    .form {
+      padding-top: 2.25rem;
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.775rem;
+        font-weight: 700;
+        color: $darkSlateGrey;
+
+        .error {
+          color: $tomato;
+          display: none;
+        }
+      }
+
+      #email-input {
+        width: 100%;
+        padding: 1rem 1.15rem;
+        border-radius: 0.35rem;
+        -webkit-border-radius: 0.35rem;
+        -moz-border-radius: 0.35rem;
+        -ms-border-radius: 0.35rem;
+        -o-border-radius: 0.35rem;
+        border: 1px solid $grey;
+        margin: 0.5rem 0 1rem;
+      }
+    }
+  }
+
+  .image {
+    min-width: 350px;
+    height: 100%;
+    background-image: url(assets/illustration-sign-up-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+}
+
+// Article
+.article {
+  display: none;
+  padding: 2.75rem;
+  border-radius: 1.5rem;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
+  background-color: $white;
+  width: min(375px, 100vw);
+
+  img {
+    display: block;
+    width: 50px;
+    height: 50px;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    color: $darkSlateGrey;
+    font-weight: 700;
+    line-height: 2.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .text {
+    font-size: 0.925rem;
+    line-height: 1.325rem;
+    padding: 1.45rem 0;
+    color: $charcoalGrey;
+  }
+}
+
+// For Smaller Devices
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column-reverse;
+    padding: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    min-height: 100vh;
+    justify-content: flex-end;
+
+    .image {
+      height: min(300px, 60vw);
+      background-size: cover;
+      background-image: url(assets/illustration-sign-up-mobile.svg);
+      border-radius: 0 0 1.25rem 1.25rem;
+      -webkit-border-radius: 0 0 1.25rem 1.25rem;
+      -moz-border-radius: 0 0 1.25rem 1.25rem;
+      -ms-border-radius: 0 0 1.25rem 1.25rem;
+      -o-border-radius: 0 0 1.25rem 1.25rem;
+    }
+  }
+}
